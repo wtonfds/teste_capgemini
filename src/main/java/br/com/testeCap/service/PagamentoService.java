@@ -18,14 +18,17 @@ public class PagamentoService {
 	
 	private final PagamentoRepository pagamentoRepository;
 	
+	// listar todos os pagamentos
 	public List<Pagamento> listAll(){
 		return pagamentoRepository.findAll();
 	}
 	
+	// buscar o pagamento pelo ID
 	public Pagamento findById(Long id){
 		return pagamentoRepository.findById(id).orElseThrow(()->new ResponseStatusException(HttpStatus.BAD_REQUEST, "Pagamento nao encontrado"));
 	}
 	
+	// Salvar o pagamento no banco
 	public Pagamento save(PagamentoPostBodyDTO pagamentoPostBodyDTO){
 		
 		Pagamento pagamento = Pagamento.builder()
@@ -44,10 +47,12 @@ public class PagamentoService {
 		return pagamentoRepository.save(pagamento);
 	}
 	
+	// excluir um pagamento do banco
 	public void delete(Long id){
 		pagamentoRepository.delete(findById(id));
 	}
 	
+	// atualizar um pagamento
 	public void update(PagamentoPutBodyDTO pagamentoPutBodyDTO){
 		
 		Pagamento pagamentoSalvo = findById(pagamentoPutBodyDTO.getId());

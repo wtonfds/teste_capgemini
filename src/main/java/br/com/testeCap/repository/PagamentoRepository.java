@@ -9,6 +9,6 @@ import br.com.testeCap.domain.Pagamento;
 
 
 public interface PagamentoRepository extends JpaRepository<Pagamento, Long>{
-	
+	// repositorio do banco usando jpa para persistencia dos dados no banco
 	
 }

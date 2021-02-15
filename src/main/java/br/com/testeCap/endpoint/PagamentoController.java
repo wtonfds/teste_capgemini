@@ -29,27 +29,32 @@ public class PagamentoController {
 	private final PagamentoService pagamentoService;
 	
 	
+	// endpoint para listar todos os pagamentos
 	@GetMapping
 	public ResponseEntity<List<Pagamento>> List(){
 		return ResponseEntity.ok(pagamentoService.listAll());
 	}
 	
+	// endpoint que busca um pagamento pelo ID
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<Pagamento> findById(@PathVariable long id){
 		return ResponseEntity.ok(pagamentoService.findById(id));
 	}
 	
+	// endpoint para salvar
 	@PostMapping
 	public ResponseEntity<Pagamento> save(@RequestBody PagamentoPostBodyDTO pagamento){
 		return new ResponseEntity<>(pagamentoService.save(pagamento), HttpStatus.CREATED);
 	}
 	
+	// endpoint para remover
 	@DeleteMapping
 	public ResponseEntity<Void> delete(@PathVariable long id){
 		pagamentoService.delete(id);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 	
+	//endpoint para atualizar
 	@PutMapping
 	public ResponseEntity<Void> put(@RequestBody PagamentoPutBodyDTO pagamento){
 		pagamentoService.update(pagamento);

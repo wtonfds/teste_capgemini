@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Configuration;
 @SpringBootApplication
 @ComponentScan("br.com.testeCap")
 public class ApplicationStart  {
+	
+	// classe que inicia a aplicacao
 
   public static void main(String[] args) {
     SpringApplication.run(ApplicationStart.class, args);
