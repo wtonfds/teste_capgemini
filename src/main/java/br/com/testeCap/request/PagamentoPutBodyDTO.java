@@ -13,7 +13,4 @@ public class PagamentoPutBodyDTO {
 	private double valor;
 	private String descricao;
 	private double porcentagem; 
-	private String dia;
-	private String mes;
-	private String ano;
 }

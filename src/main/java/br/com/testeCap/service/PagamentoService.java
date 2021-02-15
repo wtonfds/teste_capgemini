@@ -39,9 +39,6 @@ public class PagamentoService {
 				.valor(pagamentoPostBodyDTO.getValor())
 				.descricao(pagamentoPostBodyDTO.getDescricao())
 				.porcentagem(pagamentoPostBodyDTO.getPorcentagem())
-				.dia(pagamentoPostBodyDTO.getDia())
-				.mes(pagamentoPostBodyDTO.getMes())
-				.ano(pagamentoPostBodyDTO.getAno())
 				.build();	
 		
 		return pagamentoRepository.save(pagamento);
@@ -66,9 +63,6 @@ public class PagamentoService {
 				.valor(pagamentoPutBodyDTO.getValor())
 				.descricao(pagamentoPutBodyDTO.getDescricao())
 				.porcentagem(pagamentoPutBodyDTO.getPorcentagem())
-				.dia(pagamentoPutBodyDTO.getDia())
-				.mes(pagamentoPutBodyDTO.getMes())
-				.ano(pagamentoPutBodyDTO.getAno())
 				.build();	
 		
 		pagamentoRepository.save(pagamento);

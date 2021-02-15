@@ -33,9 +33,7 @@ class PagamentoRepositoryTest {
 		Assertions.assertThat(savedPagamento.getValor()).isEqualTo(pagamento.getValor());
 		Assertions.assertThat(savedPagamento.getDescricao()).isEqualTo(pagamento.getDescricao());
 		Assertions.assertThat(savedPagamento.getPorcentagem()).isEqualTo(pagamento.getPorcentagem());
-		Assertions.assertThat(savedPagamento.getDia()).isEqualTo(pagamento.getDia());
-		Assertions.assertThat(savedPagamento.getMes()).isEqualTo(pagamento.getMes());
-		Assertions.assertThat(savedPagamento.getAno()).isEqualTo(pagamento.getAno());
+		
 	}
 	
 	@Test
@@ -60,9 +58,6 @@ class PagamentoRepositoryTest {
 				.valor(0.0)
 				.descricao("teste unitario")
 				.porcentagem(100.0)
-				.dia("16")
-				.mes("11")
-				.ano("2020")
 				.build();
 	}
 
